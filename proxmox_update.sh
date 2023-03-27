@@ -23,7 +23,6 @@ apt upgrade -y
 
 # House cleaning
 apt clean
-apt autoremove
 apt autoremove --purge
 
 
