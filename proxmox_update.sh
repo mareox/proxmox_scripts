@@ -27,14 +27,16 @@ apt autoremove --purge
 
 #reboot
 echo " Your system will reboot in 10 seconds, ctrl+c to cancel "
+sleep 1
+echo " Ignition in ..."
 i=1
 
-while [ $i -le 9 ]; do
+for i in {9..1}; do
   echo "$i"
-  i=$(($i+1))
-        sleep 1
+  sleep 1
 done
 echo " Here we goooooo! "
+  sleep 2
 reboot
 
 # Install Dark Theme for Proxmox GUI
