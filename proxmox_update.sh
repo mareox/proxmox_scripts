@@ -25,7 +25,9 @@ apt upgrade -y
 apt clean
 apt autoremove --purge
 
-
+#reboot
+sleep 60
+reboot
 
 # Install Dark Theme for Proxmox GUI
 # bash <(curl -s https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/PVEDiscordDark.sh ) install
