@@ -38,7 +38,7 @@ for i in {9..1}; do
 done
   
 sleep 1
-echo " Here we goooooo! "
+echo " Here we goooooo! ................................ "
 sleep 3
 reboot
 
