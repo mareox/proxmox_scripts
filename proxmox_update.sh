@@ -25,18 +25,21 @@ apt upgrade -y
 apt clean
 apt autoremove --purge
 
-#reboot
+### reboot
 echo " Your system will reboot in 10 seconds, ctrl+c to cancel "
-sleep 1
+sleep 3
 echo " Ignition in ..."
 i=1
 
+# Count down to reboot
 for i in {9..1}; do
   echo "$i"
   sleep 1
 done
+  
+  sleep 1
 echo " Here we goooooo! "
-  sleep 2
+  sleep 3
 reboot
 
 # Install Dark Theme for Proxmox GUI
