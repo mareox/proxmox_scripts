@@ -37,9 +37,9 @@ for i in {9..1}; do
   sleep 1
 done
   
-  sleep 1
+sleep 1
 echo " Here we goooooo! "
-  sleep 3
+sleep 3
 reboot
 
 # Install Dark Theme for Proxmox GUI
