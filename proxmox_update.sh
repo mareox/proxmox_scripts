@@ -22,8 +22,8 @@ apt dist-upgrade -y
 apt upgrade -y
 
 # House cleaning
-apt clean
-apt autoremove --purge
+apt autoclean
+apt autoremove --purge 
 
 ### reboot
 echo " Your system will reboot in 10 seconds, ctrl+c to cancel "
