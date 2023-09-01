@@ -40,7 +40,7 @@ done
 sleep 1
 echo " Here we goooooo! ................................ "
 sleep 3
-reboot
+shutdown -r now
 
 # Install Dark Theme for Proxmox GUI
 # bash <(curl -s https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/PVEDiscordDark.sh ) install
