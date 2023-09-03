@@ -1,29 +1,29 @@
 #!/bin/bash
 
 # Disable Commercial Repo
-sed -i "s/^deb/\#deb/" /etc/apt/sources.list.d/pve-enterprise.list
+sed -i "s/^deb/\#deb/" /etc/apt-get/sources.list.d/pve-enterprise.list
 
-apt update -y && apt upgrade -y && apt update -y
+apt-get update -y && apt-get upgrade -y && apt-get update -y
 
 # Add PVE Community Repo
-echo "deb http://download.proxmox.com/debian/pve $(grep "VERSION=" /etc/os-release | sed -n 's/.*(\(.*\)).*/\1/p') pve-no-subscription" > /etc/apt/sources.list.d/pve-no-enterprise.list 
+echo "deb http://download.proxmox.com/debian/pve $(grep "VERSION=" /etc/os-release | sed -n 's/.*(\(.*\)).*/\1/p') pve-no-subscription" > /etc/apt-get/sources.list.d/pve-no-enterprise.list 
 
-apt update -y
+apt-get update -y
 
 # Remove nag
-echo "DPkg::Post-Invoke { \"dpkg -V proxmox-widget-toolkit | grep -q '/proxmoxlib\.js$'; if [ \$? -eq 1 ]; then { echo 'Removing subscription nag from UI...'; sed -i '/data.status/{s/\!//;s/Active/NoMoreNagging/}' /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js; }; fi\"; };" > /etc/apt/apt.conf.d/no-nag-script
+echo "DPkg::Post-Invoke { \"dpkg -V proxmox-widget-toolkit | grep -q '/proxmoxlib\.js$'; if [ \$? -eq 1 ]; then { echo 'Removing subscription nag from UI...'; sed -i '/data.status/{s/\!//;s/Active/NoMoreNagging/}' /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js; }; fi\"; };" > /etc/apt-get/apt-get.conf.d/no-nag-script
 
-apt --reinstall install proxmox-widget-toolkit
+apt-get --reinstall install proxmox-widget-toolkit
 
 # Update proxmox pve to newest available version
-apt dist-upgrade -y
+apt-get dist-upgrade -y
 
 # Alt update everything (has been warned against, I never had any issue so use at own risk)
-apt upgrade -y
+apt-get upgrade -y
 
 # House cleaning
-apt autoclean
-apt autoremove --purge 
+apt-get autoclean
+apt-get autoremove --purge 
 
 ### reboot
 echo " Your system will reboot in 10 seconds, ctrl+c to cancel "
