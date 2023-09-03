@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Disable Commercial Repo
-sed -i "s/^deb/\#deb/" /etc/apt-get/sources.list.d/pve-enterprise.list
+sed -i "s/^deb/\#deb/" /etc/apt/sources.list.d/pve-enterprise.list
 
 apt-get update -y && apt-get upgrade -y && apt-get update -y
 
