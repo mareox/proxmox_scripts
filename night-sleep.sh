@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the Proxmox node name
-node=$(pvesh get /nodes --output-format json | jq -r '.[0].node')
+node=$hostname
 
 # Get a list of all devices with the "night-sleep" tag for VMs
 devices_to_suspend=$(pvesh get /nodes/$node/qemu --output-format json | jq -r '.[] | select(.tags | contains(["night-sleep"])) | .vmid')
