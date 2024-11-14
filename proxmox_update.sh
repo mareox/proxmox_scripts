@@ -16,14 +16,14 @@ echo "DPkg::Post-Invoke { \"dpkg -V proxmox-widget-toolkit | grep -q '/proxmoxli
 apt-get --reinstall install proxmox-widget-toolkit
 
 # Update proxmox pve to newest available version
-apt-get dist-upgrade -y
+yes | apt-get dist-upgrade -y
 
 # Alt update everything (has been warned against, I never had any issue so use at own risk)
-apt-get upgrade -y
+yes | apt-get upgrade -y
 
 # House cleaning
 apt-get autoclean
-apt-get autoremove --purge 
+yes | apt-get autoremove --purge 
 
 ### reboot
 echo " Your system will reboot in 10 seconds, ctrl+c to cancel "
