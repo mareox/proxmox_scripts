@@ -16,7 +16,7 @@ echo "DPkg::Post-Invoke { \"dpkg -V proxmox-widget-toolkit | grep -q '/proxmoxli
 apt-get --reinstall install proxmox-widget-toolkit
 
 # fstrim
-bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/misc/fstrim.sh)"
+# bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/misc/fstrim.sh)"
 
 # Update proxmox pve to newest available version
 yes | apt-get dist-upgrade -y
